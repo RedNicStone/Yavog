@@ -1,5 +1,5 @@
-#include "parser/SourceCollection.hpp"
-#include "parser/Source.hpp"
+#include "yavog/parser/SourceCollection.hpp"
+#include "yavog/parser/Source.hpp"
 #include <cassert>
 #include <memory>
 

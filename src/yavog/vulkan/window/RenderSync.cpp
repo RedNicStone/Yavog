@@ -1,7 +1,7 @@
 
 #include "RenderSync.hpp"
-#include "vulkan/setup/Device.hpp"
-#include "vulkan/window/DepthBuffer.hpp"
+#include "yavog/vulkan/setup/Device.hpp"
+#include "yavog/vulkan/window/DepthBuffer.hpp"
 
 
 void RenderSync::create(CommandPool& pool,Swapchain& swapchain){

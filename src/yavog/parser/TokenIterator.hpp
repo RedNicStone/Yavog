@@ -1,7 +1,7 @@
 #pragma once
 #include <cstddef>
 #include <cstdint>
-#include "parser/Token.hpp"
+#include "yavog/parser/Token.hpp"
 
 class TokenIterator{
     Token* parent = nullptr;

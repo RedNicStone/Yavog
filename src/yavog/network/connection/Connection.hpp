@@ -1,5 +1,5 @@
 #pragma  once
-#include "network/connection/Channel.hpp"
+#include "yavog/network/connection/Channel.hpp"
 
 struct Connection{
     Channel4TwoThread toServer;

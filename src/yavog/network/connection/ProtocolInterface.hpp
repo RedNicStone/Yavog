@@ -1,6 +1,6 @@
 #pragma once
-#include "data/BinaryData.hpp"
-#include "network/connection/Channel.hpp"
+#include "yavog/data/BinaryData.hpp"
+#include "yavog/network/connection/Channel.hpp"
 #include <cstdint>
 #include <iostream>
 

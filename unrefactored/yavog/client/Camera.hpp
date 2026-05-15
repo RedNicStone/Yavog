@@ -1,8 +1,8 @@
 #pragma once
-#include "vulkan/Header.hpp"
-#include "vulkan/window/RenderSync.hpp"
-#include "vulkan/window/Window.hpp"
-#include "vulkan/draw/UBO.hpp"
+#include "yavog/vulkan/Header.hpp"
+#include "yavog/vulkan/window/RenderSync.hpp"
+#include "yavog/vulkan/window/Window.hpp"
+#include "yavog/vulkan/draw/UBO.hpp"
 #include <chrono>
 #include <memory>
 

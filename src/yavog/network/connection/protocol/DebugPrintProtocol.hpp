@@ -1,5 +1,5 @@
-#include "network/connection/ProtocolInterface.hpp"
-#include "network/connection/Connection.hpp"
+#include "yavog/network/connection/ProtocolInterface.hpp"
+#include "yavog/network/connection/Connection.hpp"
 #include <string>
 
 struct DebugPrintProtocol:public ProtocolInterface{

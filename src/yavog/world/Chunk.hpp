@@ -1,11 +1,11 @@
 #pragma once
 
 
-#include "App.hpp"
-#include "client/MeshWeaver.hpp"
-#include "data/BinaryData.hpp"
-#include "vulkan/draw/Buffer.hpp"
-#include "vulkan/draw/Pipeline.hpp"
+#include "yavog/App.hpp"
+#include "yavog/client/MeshWeaver.hpp"
+#include "yavog/data/BinaryData.hpp"
+#include "yavog/vulkan/draw/Buffer.hpp"
+#include "yavog/vulkan/draw/Pipeline.hpp"
 #include <cstdint>
 #include <iostream>
 typedef uint16_t BlockType;

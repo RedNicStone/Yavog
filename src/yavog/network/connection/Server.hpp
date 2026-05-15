@@ -5,10 +5,10 @@
 #include <stop_token>
 #include <thread>
 #include <vector>
-#include "network/basic/TcpListener.hpp"
-#include "network/basic/TcpSocket.hpp"
-#include "network/connection/ProtocolList.hpp"
-#include "network/connection/Connection.hpp"
+#include "yavog/network/basic/TcpListener.hpp"
+#include "yavog/network/basic/TcpSocket.hpp"
+#include "yavog/network/connection/ProtocolList.hpp"
+#include "yavog/network/connection/Connection.hpp"
 
 
 struct Player{

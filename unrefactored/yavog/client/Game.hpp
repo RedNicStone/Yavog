@@ -1,13 +1,13 @@
 #pragma once
-#include "vulkan/setup/Instance.hpp"
-#include "vulkan/setup/ValidationLayer.hpp"
-#include "vulkan/setup/Device.hpp"
-#include "vulkan/setup/CommandPool.hpp"
-#include "vulkan/window/Window.hpp"
-#include "vulkan/window/GraphicsQueue.hpp"
-#include "vulkan/window/Swapchain.hpp"
-#include "vulkan/window/RenderSync.hpp"
-#include "server/World.hpp"
+#include "yavog/vulkan/setup/Instance.hpp"
+#include "yavog/vulkan/setup/ValidationLayer.hpp"
+#include "yavog/vulkan/setup/Device.hpp"
+#include "yavog/vulkan/setup/CommandPool.hpp"
+#include "yavog/vulkan/window/Window.hpp"
+#include "yavog/vulkan/window/GraphicsQueue.hpp"
+#include "yavog/vulkan/window/Swapchain.hpp"
+#include "yavog/vulkan/window/RenderSync.hpp"
+#include "yavog/server/World.hpp"
 #include "GameFolder.hpp"
 
 class Game2

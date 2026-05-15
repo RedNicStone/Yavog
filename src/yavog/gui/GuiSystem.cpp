@@ -1,6 +1,6 @@
-#include "gui/GuiSystem.hpp"
-#include "gui/screen/MainMenu.hpp"
-#include "gui/GuiScreen.hpp"
+#include "yavog/gui/GuiSystem.hpp"
+#include "yavog/gui/screen/MainMenu.hpp"
+#include "yavog/gui/GuiScreen.hpp"
 
 GuiSystem::GuiSystem(Vulkan& vulkan):vulkan(vulkan){
 

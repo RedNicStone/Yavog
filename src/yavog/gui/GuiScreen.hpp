@@ -1,13 +1,13 @@
 #pragma once
-#include "GLFW/glfw3.h"
-#include "text/DumpText.hpp"
-#include "glm/ext/vector_float2.hpp"
-#include "glm/ext/vector_float4.hpp"
-#include "gui/GuiAsset.hpp"
-#include "gui/GuiComponent.hpp"
-#include "gui/GuiSystem.hpp"
-#include "vulkan/setup/CommandBuffer.hpp"
-#include "vulkan/window/Event.hpp"
+#include <GLFW/glfw3.h>
+#include "yavog/text/DumpText.hpp"
+#include <glm/ext/vector_float2.hpp>
+#include <glm/ext/vector_float4.hpp>
+#include "yavog/gui/GuiAsset.hpp"
+#include "yavog/gui/GuiComponent.hpp"
+#include "yavog/gui/GuiSystem.hpp"
+#include "yavog/vulkan/setup/CommandBuffer.hpp"
+#include "yavog/vulkan/window/Event.hpp"
 #include <string>
 #include <variant>
 

@@ -4,10 +4,10 @@
 #include <string>
 #include <utility>
 #include <vector>
-#include "data/BinaryData.hpp"
-#include "network/connection/ProtocolInterface.hpp"
-#include "network/connection/protocol/DebugPrintProtocol.hpp"
-#include "network/connection/protocol/ChunkProtocol.hpp"
+#include "yavog/data/BinaryData.hpp"
+#include "yavog/network/connection/ProtocolInterface.hpp"
+#include "yavog/network/connection/protocol/DebugPrintProtocol.hpp"
+#include "yavog/network/connection/protocol/ChunkProtocol.hpp"
 
 class ProtocolList{
 public:

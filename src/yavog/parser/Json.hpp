@@ -1,7 +1,7 @@
 #pragma once
 
-#include "parser/Token.hpp"
-#include "parser/TokenIterator.hpp"
+#include "yavog/parser/Token.hpp"
+#include "yavog/parser/TokenIterator.hpp"
 #include <cassert>
 #include <ios>
 #include <map>

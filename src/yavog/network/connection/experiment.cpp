@@ -1,9 +1,9 @@
 
 
-#include "data/BinaryData.hpp"
-#include "network/connection/ProtocolList.hpp"
-#include "network/connection/Client.hpp"
-#include "network/connection/Server.hpp"
+#include "yavog/data/BinaryData.hpp"
+#include "yavog/network/connection/ProtocolList.hpp"
+#include "yavog/network/connection/Client.hpp"
+#include "yavog/network/connection/Server.hpp"
 #include <memory>
 #include <stop_token>
 #include <string>

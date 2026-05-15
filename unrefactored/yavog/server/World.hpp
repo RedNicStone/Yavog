@@ -1,6 +1,6 @@
 #pragma once
-#include "data/BinaryData.hpp"
-#include "data/Filebasic.hpp"
+#include "yavog/data/BinaryData.hpp"
+#include "yavog/data/Filebasic.hpp"
 #include <filesystem>
 #include <iostream>
 #include <vector>

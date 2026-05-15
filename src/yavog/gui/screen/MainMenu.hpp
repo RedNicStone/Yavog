@@ -1,11 +1,11 @@
 #pragma once
-#include "client/FPSMessurement.hpp"
-#include "glm/ext/vector_float2.hpp"
-#include "glm/ext/vector_float3.hpp"
-#include "gui/GuiComponent.hpp"
-#include "gui/GuiScreen.hpp"
-#include "gui/GuiSystem.hpp"
-#include "vulkan/Vulkan.hpp"
+#include "yavog/client/FPSMessurement.hpp"
+#include <glm/ext/vector_float2.hpp>
+#include <glm/ext/vector_float3.hpp>
+#include "yavog/gui/GuiComponent.hpp"
+#include "yavog/gui/GuiScreen.hpp"
+#include "yavog/gui/GuiSystem.hpp"
+#include "yavog/vulkan/Vulkan.hpp"
 #include <chrono>
 
 

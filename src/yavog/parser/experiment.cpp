@@ -1,9 +1,9 @@
 
-#include "parser/Source.hpp"
-#include "parser/SourceCollection.hpp"
-#include "parser/Token.hpp"
-#include "parser/TokenIterator.hpp"
-#include "data/Filebasic.hpp"
+#include "yavog/parser/Source.hpp"
+#include "yavog/parser/SourceCollection.hpp"
+#include "yavog/parser/Token.hpp"
+#include "yavog/parser/TokenIterator.hpp"
+#include "yavog/data/Filebasic.hpp"
 #include <fstream>
 #include <iostream>
 #include <memory>

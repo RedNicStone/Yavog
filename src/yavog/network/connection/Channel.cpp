@@ -1,5 +1,5 @@
-#include "network/connection/Channel.hpp"
-#include "data/BinaryData.hpp"
+#include "yavog/network/connection/Channel.hpp"
+#include "yavog/data/BinaryData.hpp"
 #include <atomic>
 #include <cstdint>
 #include <optional>

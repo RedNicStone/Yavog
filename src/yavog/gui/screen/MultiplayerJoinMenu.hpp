@@ -1,5 +1,5 @@
-#include "gui/GuiComponent.hpp"
-#include "gui/GuiScreen.hpp"
+#include "yavog/gui/GuiComponent.hpp"
+#include "yavog/gui/GuiScreen.hpp"
 
 class MultiplayerJoinMenu:public GuiScreen{
     TextGui back;

@@ -1,6 +1,6 @@
 #pragma once
-#include "vulkan/setup/CommandPool.hpp"
-#include "vulkan/setup/CommandBuffer.hpp"
+#include "yavog/vulkan/setup/CommandPool.hpp"
+#include "yavog/vulkan/setup/CommandBuffer.hpp"
 #include <memory>
 #include <vector>
 #include <vulkan/vulkan_raii.hpp>

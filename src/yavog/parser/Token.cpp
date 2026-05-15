@@ -1,6 +1,6 @@
 #include "Token.hpp"
-#include "parser/Source.hpp"
-#include "parser/SourceCollection.hpp"
+#include "yavog/parser/Source.hpp"
+#include "yavog/parser/SourceCollection.hpp"
 #include <fstream>
 #include <algorithm>
 #include <limits>

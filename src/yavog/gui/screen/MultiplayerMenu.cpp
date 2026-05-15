@@ -1,8 +1,8 @@
-#include "gui/screen/MultiplayerMenu.hpp"
-#include "gui/screen/MainMenu.hpp"
-#include "gui/screen/SinglePlayerMenu.hpp"
-#include "gui/screen/MultiplayerHostMenu.hpp"
-#include "gui/screen/MultiplayerJoinMenu.hpp"
+#include "yavog/gui/screen/MultiplayerMenu.hpp"
+#include "yavog/gui/screen/MainMenu.hpp"
+#include "yavog/gui/screen/SinglePlayerMenu.hpp"
+#include "yavog/gui/screen/MultiplayerHostMenu.hpp"
+#include "yavog/gui/screen/MultiplayerJoinMenu.hpp"
 
 MultiplayerMenu::MultiplayerMenu(GuiSystem& guiSystem):
     GuiScreen(guiSystem),textHost(guiSystem),

@@ -1,8 +1,8 @@
 #pragma once
-#include "vulkan/draw/Descriptor.hpp"
-#include "vulkan/setup/Device.hpp"
-#include "vulkan/window/RenderSync.hpp"
-#include "vulkan/draw/Buffer.hpp"
+#include "yavog/vulkan/draw/Descriptor.hpp"
+#include "yavog/vulkan/setup/Device.hpp"
+#include "yavog/vulkan/window/RenderSync.hpp"
+#include "yavog/vulkan/draw/Buffer.hpp"
 #include <cstddef>
 #include <memory>
 #include <vulkan/vulkan.hpp>

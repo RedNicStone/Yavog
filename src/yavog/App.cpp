@@ -3,10 +3,10 @@
 #include <filesystem>
 #include <iostream>
 #include <memory>
-#include "App.hpp"
+#include "yavog/App.hpp"
 #include "FastNoiseLite.h"
-#include "GLFW/glfw3.h"
-#include "world/Chunk.hpp"
+#include <GLFW/glfw3.h>
+#include "yavog/world/Chunk.hpp"
 
 App* App::app = nullptr;
 

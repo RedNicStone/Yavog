@@ -1,7 +1,7 @@
 #pragma once
-#include "vulkan/window/RenderSync.hpp"
-#include "vulkan_old/Image.hpp"
-#include "vulkan/window/Swapchain.hpp"
+#include "yavog/vulkan/window/RenderSync.hpp"
+#include "yavog/vulkan_old/Image.hpp"
+#include "yavog/vulkan/window/Swapchain.hpp"
 
 
 //TODO: look into stencil tests

@@ -1,8 +1,8 @@
 #pragma once
-#include "gui/GuiAsset.hpp"
-#include "vulkan/Vulkan.hpp"
-#include "vulkan/setup/CommandBuffer.hpp"
-#include "vulkan/window/Event.hpp"
+#include "yavog/gui/GuiAsset.hpp"
+#include "yavog/vulkan/Vulkan.hpp"
+#include "yavog/vulkan/setup/CommandBuffer.hpp"
+#include "yavog/vulkan/window/Event.hpp"
 #include <filesystem>
 #include <memory>
 

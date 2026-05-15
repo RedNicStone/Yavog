@@ -1,6 +1,6 @@
 #pragma once
-#include "vulkan/Header.hpp"
-#include "vulkan/setup/Instance.hpp"
+#include "yavog/vulkan/Header.hpp"
+#include "yavog/vulkan/setup/Instance.hpp"
 
 class ValidationLayer
 {

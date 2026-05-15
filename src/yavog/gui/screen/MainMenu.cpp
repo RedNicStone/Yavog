@@ -1,7 +1,7 @@
-#include "gui/screen/MainMenu.hpp"
-#include "gui/screen/MultiplayerMenu.hpp"
-#include "gui/screen/SinglePlayerMenu.hpp"
-#include "gui/screen/MultiplayerHostMenu.hpp"
+#include "yavog/gui/screen/MainMenu.hpp"
+#include "yavog/gui/screen/MultiplayerMenu.hpp"
+#include "yavog/gui/screen/SinglePlayerMenu.hpp"
+#include "yavog/gui/screen/MultiplayerHostMenu.hpp"
 
 MainMenu::MainMenu(GuiSystem& guiSystem):
     GuiScreen(guiSystem),textSinglePlayer(guiSystem),

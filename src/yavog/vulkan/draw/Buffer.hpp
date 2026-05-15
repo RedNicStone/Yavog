@@ -1,5 +1,5 @@
 #pragma once
-#include "vulkan/window/RenderSync.hpp"
+#include "yavog/vulkan/window/RenderSync.hpp"
 
 //NOTE: there are only 4096 max memory allocations, split bigger buffers into smaller ones with offset. (TODO: custom allocator)
 //NOTE: IndexBuffer and VertexBuffer in one, is more cache friendly.

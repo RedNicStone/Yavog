@@ -1,5 +1,5 @@
 #include "TokenIterator.hpp"
-#include "parser/Token.hpp"
+#include "yavog/parser/Token.hpp"
 
 TokenIterator::TokenIterator(SourceCollection& collection,Token* parent,size_t index):collection(collection),parent(parent),index(index){
 }

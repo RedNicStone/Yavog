@@ -1,10 +1,10 @@
 #pragma once 
-#include "glm/ext/vector_float2.hpp"
-#include "glm/ext/vector_int2.hpp"
-#include "vulkan/setup/CommandBuffer.hpp"
-#include "vulkan/window/RenderSync.hpp"
-#include "vulkan/draw/Buffer.hpp"
-#include "vulkan_old/Image.hpp"
+#include <glm/ext/vector_float2.hpp>
+#include <glm/ext/vector_int2.hpp>
+#include "yavog/vulkan/setup/CommandBuffer.hpp"
+#include "yavog/vulkan/window/RenderSync.hpp"
+#include "yavog/vulkan/draw/Buffer.hpp"
+#include "yavog/vulkan_old/Image.hpp"
 #include <cstddef>
 #include <cstdint>
 #include <iostream>
@@ -14,8 +14,8 @@
 #include <string_view>
 #include <vector>
 #include FT_FREETYPE_H  
-#include "vulkan/setup/CommandPool.hpp"
-#include "text/TexturePacker.hpp"
+#include "yavog/vulkan/setup/CommandPool.hpp"
+#include "yavog/text/TexturePacker.hpp"
 
 /*
     Can only represent non-CTL characters. 

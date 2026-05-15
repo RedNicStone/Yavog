@@ -1,7 +1,7 @@
 #pragma once 
-#include "vulkan/Header.hpp"
-#include "vulkan/setup/Queue.hpp"
-#include "vulkan/window/Window.hpp"
+#include "yavog/vulkan/Header.hpp"
+#include "yavog/vulkan/setup/Queue.hpp"
+#include "yavog/vulkan/window/Window.hpp"
 
 class GraphicsQueue:public Queue
 {

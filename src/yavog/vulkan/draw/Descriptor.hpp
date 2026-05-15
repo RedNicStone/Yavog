@@ -1,7 +1,7 @@
 #pragma once
-#include "vulkan/Header.hpp"
-#include "vulkan/draw/DescriptorLayout.hpp"
-#include "vulkan/window/RenderSync.hpp"
+#include "yavog/vulkan/Header.hpp"
+#include "yavog/vulkan/draw/DescriptorLayout.hpp"
+#include "yavog/vulkan/window/RenderSync.hpp"
 #include <cstddef>
 #include <map>
 #include <memory>

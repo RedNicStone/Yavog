@@ -1,10 +1,10 @@
 #pragma once
 
-#include "client/Camera.hpp"
-#include "vulkan/Vulkan.hpp"
-#include "vulkan/draw/DescriptorLayout.hpp"
-#include "vulkan/draw/Pipeline.hpp"
-#include "vulkan_old/Image.hpp"
+#include "yavog/client/Camera.hpp"
+#include "yavog/vulkan/Vulkan.hpp"
+#include "yavog/vulkan/draw/DescriptorLayout.hpp"
+#include "yavog/vulkan/draw/Pipeline.hpp"
+#include "yavog/vulkan_old/Image.hpp"
 
 class World{
 public:

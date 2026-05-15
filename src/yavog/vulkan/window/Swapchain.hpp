@@ -1,7 +1,7 @@
 #pragma once
-#include "vulkan/window/Window.hpp"
-#include "vulkan/setup/Device.hpp"
-#include "vulkan/setup/CommandBuffer.hpp"
+#include "yavog/vulkan/window/Window.hpp"
+#include "yavog/vulkan/setup/Device.hpp"
+#include "yavog/vulkan/setup/CommandBuffer.hpp"
 
 class Swapchain
 {

@@ -1,6 +1,6 @@
-#include "App.hpp"
-#include "network/connection/ProtocolList.hpp"
-#include "world/Chunk.hpp"
+#include "yavog/App.hpp"
+#include "yavog/network/connection/ProtocolList.hpp"
+#include "yavog/world/Chunk.hpp"
 #include <memory>
 
 void ChunkProtocol::clientReceive(Channel4TwoThread& con,BinaryData& input){

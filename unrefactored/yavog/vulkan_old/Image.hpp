@@ -1,14 +1,14 @@
 #pragma once
-#include "vulkan/Header.hpp"
+#include "yavog/vulkan/Header.hpp"
 #include <stb_image.h>
-#include "vulkan/setup/Device.hpp"
-#include "vulkan/setup/CommandBuffer.hpp"
+#include "yavog/vulkan/setup/Device.hpp"
+#include "yavog/vulkan/setup/CommandBuffer.hpp"
 #include <filesystem>
 
-#include "vulkan/draw/Descriptor.hpp"
-#include "vulkan/setup/CommandPool.hpp"
-#include "vulkan/window/RenderSync.hpp"
-#include "vulkan/draw/Buffer.hpp"
+#include "yavog/vulkan/draw/Descriptor.hpp"
+#include "yavog/vulkan/setup/CommandPool.hpp"
+#include "yavog/vulkan/window/RenderSync.hpp"
+#include "yavog/vulkan/draw/Buffer.hpp"
 #include <filesystem>
 #include <memory>
 #include <vulkan/vulkan.hpp>

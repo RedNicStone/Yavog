@@ -1,10 +1,10 @@
 #include "MultiplayerHostMenu.hpp"
-#include "App.hpp"
-#include "glm/ext/vector_float2.hpp"
-#include "gui/screen/MainMenu.hpp"
-#include "gui/screen/MultiplayerMenu.hpp"
-#include "network/connection/Client.hpp"
-#include "network/connection/Server.hpp"
+#include "yavog/App.hpp"
+#include <glm/ext/vector_float2.hpp>
+#include "yavog/gui/screen/MainMenu.hpp"
+#include "yavog/gui/screen/MultiplayerMenu.hpp"
+#include "yavog/network/connection/Client.hpp"
+#include "yavog/network/connection/Server.hpp"
 #include <cstddef>
 #include <exception>
 #include <string>

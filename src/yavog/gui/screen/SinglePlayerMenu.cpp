@@ -1,10 +1,10 @@
 #include "SinglePlayerMenu.hpp"
 #include "MainMenu.hpp"
-#include "GLFW/glfw3.h"
-#include "glm/ext/vector_float2.hpp"
-#include "glm/ext/vector_float4.hpp"
-#include "gui/GuiScreen.hpp"
-#include "gui/screen/MainMenu.hpp"
+#include <GLFW/glfw3.h>
+#include <glm/ext/vector_float2.hpp>
+#include <glm/ext/vector_float4.hpp>
+#include "yavog/gui/GuiScreen.hpp"
+#include "yavog/gui/screen/MainMenu.hpp"
 #include <memory>
 
 SinglePlayerMenu::SinglePlayerMenu(GuiSystem& guiSystem):

@@ -1,9 +1,9 @@
 #include "Server.hpp"
-#include "App.hpp"
-#include "data/BinaryData.hpp"
-#include "network/basic/SocketPoll.hpp"
-#include "network/basic/TcpListener.hpp"
-#include "network/basic/TcpSocket.hpp"
+#include "yavog/App.hpp"
+#include "yavog/data/BinaryData.hpp"
+#include "yavog/network/basic/SocketPoll.hpp"
+#include "yavog/network/basic/TcpListener.hpp"
+#include "yavog/network/basic/TcpSocket.hpp"
 #include <chrono>
 #include <cstddef>
 #include <cstdint>

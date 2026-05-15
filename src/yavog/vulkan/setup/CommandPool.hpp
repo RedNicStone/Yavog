@@ -1,6 +1,6 @@
 #pragma once
-#include "vulkan/setup/Device.hpp"
-#include "vulkan/setup/Queue.hpp"
+#include "yavog/vulkan/setup/Device.hpp"
+#include "yavog/vulkan/setup/Queue.hpp"
 
 class CommandPool{
     Device* device = nullptr;

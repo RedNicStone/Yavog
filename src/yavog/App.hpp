@@ -1,14 +1,14 @@
 #pragma once
 #include <filesystem>
 #include <memory>
-#include "client/FPSMessurement.hpp"
-#include "gui/GuiComponent.hpp"
-#include "gui/GuiScreen.hpp"
-#include "gui/GuiSystem.hpp"
-#include "network/connection/Client.hpp"
-#include "network/connection/Server.hpp"
-#include "vulkan/Vulkan.hpp"
-#include "world/World.hpp"
+#include "yavog/client/FPSMessurement.hpp"
+#include "yavog/gui/GuiComponent.hpp"
+#include "yavog/gui/GuiScreen.hpp"
+#include "yavog/gui/GuiSystem.hpp"
+#include "yavog/network/connection/Client.hpp"
+#include "yavog/network/connection/Server.hpp"
+#include "yavog/vulkan/Vulkan.hpp"
+#include "yavog/world/World.hpp"
 
 class App{
     std::filesystem::path projectDir;

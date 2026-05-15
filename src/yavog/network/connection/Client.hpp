@@ -1,9 +1,9 @@
 #pragma  once
-#include "data/BinaryData.hpp"
-#include "network/basic/SocketPoll.hpp"
-#include "network/basic/TcpListener.hpp"
-#include "network/basic/TcpSocket.hpp"
-#include "network/connection/Server.hpp"
+#include "yavog/data/BinaryData.hpp"
+#include "yavog/network/basic/SocketPoll.hpp"
+#include "yavog/network/basic/TcpListener.hpp"
+#include "yavog/network/basic/TcpSocket.hpp"
+#include "yavog/network/connection/Server.hpp"
 #include <cstddef>
 #include <cuchar>
 #include <iostream>

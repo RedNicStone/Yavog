@@ -1,6 +1,6 @@
 #pragma once
 
-#include "data/BinaryData.hpp"
+#include "yavog/data/BinaryData.hpp"
 #include <array>
 #include <atomic>
 #include <optional>

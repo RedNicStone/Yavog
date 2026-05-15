@@ -1,5 +1,5 @@
 #include "Swapchain.hpp"
-#include "vulkan/window/DepthBuffer.hpp"
+#include "yavog/vulkan/window/DepthBuffer.hpp"
 
 Swapchain::Swapchain(DeviceSettings& deviceSettings){
     deviceSettings.extensions.push_back(vk::KHRSwapchainExtensionName);

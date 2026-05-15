@@ -2,7 +2,7 @@
 #include <ctime>
 #include <filesystem>
 #include <iostream>
-#include "App.hpp"
+#include "yavog/App.hpp"
 #ifdef _WIN32
     #include <windows.h>
 #endif

@@ -1,6 +1,6 @@
 #include "DepthBuffer.hpp"
-#include "vulkan/window/RenderSync.hpp"
-#include "vulkan_old/Image.hpp"
+#include "yavog/vulkan/window/RenderSync.hpp"
+#include "yavog/vulkan_old/Image.hpp"
 #include <memory>
 
 vk::Format DepthBuffer::findSupportedFormat(Device& device,const std::vector<vk::Format>& candidates, vk::ImageTiling tiling, vk::FormatFeatureFlags features) {

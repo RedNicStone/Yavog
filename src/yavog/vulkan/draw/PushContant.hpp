@@ -1,7 +1,7 @@
 #pragma once
-#include "vulkan/Header.hpp"
-#include "vulkan/setup/CommandBuffer.hpp"
-#include "vulkan/draw/Pipeline.hpp"
+#include "yavog/vulkan/Header.hpp"
+#include "yavog/vulkan/setup/CommandBuffer.hpp"
+#include "yavog/vulkan/draw/Pipeline.hpp"
 
 class PushConstant{
     vk::ShaderStageFlagBits shaderStages;

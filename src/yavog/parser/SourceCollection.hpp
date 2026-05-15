@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <memory>
 #include <vector>
-#include "parser/Source.hpp"
+#include "yavog/parser/Source.hpp"
 
 // I store source files :)
 typedef uint32_t SourceId;

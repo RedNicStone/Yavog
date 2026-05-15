@@ -1,4 +1,4 @@
-#include "network/connection/ProtocolInterface.hpp"
+#include "yavog/network/connection/ProtocolInterface.hpp"
 #include <cassert>
 #include <string>
 
