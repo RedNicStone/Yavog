@@ -66,29 +66,29 @@ FetchContent_MakeAvailable(glfw glm stb fastnoiselite freetype)
 FetchContent_Declare(
   vulkan_headers
   GIT_REPOSITORY https://github.com/KhronosGroup/Vulkan-Headers.git
-  GIT_TAG vulkan-sdk-1.3.280.0
+  GIT_TAG vulkan-sdk-1.4.341.0
 )
 FetchContent_MakeAvailable(vulkan_headers)
 FetchContent_Declare(
   vulkan_loader
   GIT_REPOSITORY https://github.com/KhronosGroup/Vulkan-Loader.git
-  GIT_TAG vulkan-sdk-1.3.280.0
+  GIT_TAG vulkan-sdk-1.4.341.0
 )
 FetchContent_MakeAvailable(vulkan_loader)
 message("xxx${vulkan_headers_SOURCE_DIR}/include")
 
 
-
+set(SLANG_VERSION 2025.1)
 if(WIN32)
   FetchContent_Declare(
     slang
-    URL https://github.com/shader-slang/slang/releases/download/v2026.7/slang-2026.7-windows-x86_64.zip
+    URL https://github.com/shader-slang/slang/releases/download/v${SLANG_VERSION}/slang-${SLANG_VERSION}-windows-x86_64.zip
   )
   FetchContent_MakeAvailable(slang)
 else()
     FetchContent_Declare(
     slang
-    URL https://github.com/shader-slang/slang/releases/download/v2026.7/slang-2026.7-linux-x86_64.tar.gz
+    URL https://github.com/shader-slang/slang/releases/download/v${SLANG_VERSION}/slang-${SLANG_VERSION}-linux-x86_64.tar.gz
   )
   FetchContent_MakeAvailable(slang)
 endif(WIN32)
@@ -106,7 +106,6 @@ target_link_libraries(YAVOG Vulkan::Loader)
 target_link_libraries(YAVOG glm)
 target_link_libraries(YAVOG freetype)
 target_link_libraries(YAVOG Vulkan::Headers)
-#target_include_directories(YAVOG PRIVATE ${vulkan_headers_SOURCE_DIR}/include)
 
 if(MSVC)
   target_compile_options(YAVOG PRIVATE /wd2397 /wd4838)

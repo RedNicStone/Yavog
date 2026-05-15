@@ -14,10 +14,12 @@ void Instance::create(InstanceSettings settings){
     };
 
     // for macOS
+    #ifdef __APPLE__
     {
         settings.flags |= vk::InstanceCreateFlagBits::eEnumeratePortabilityKHR;
         settings.extensions.push_back(vk::KHRPortabilityEnumerationExtensionName);
     }
+    #endif
 
 
     vk::InstanceCreateInfo createInfo{
