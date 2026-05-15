@@ -1,4 +1,5 @@
 #include "Server.hpp"
+#include "App.hpp"
 #include "data/BinaryData.hpp"
 #include "network/basic/SocketPoll.hpp"
 #include "network/basic/TcpListener.hpp"
@@ -70,7 +71,7 @@ void Server::run(std::stop_token stoken,TcpListener listener){
                 if (poll.isReadable(con.client)) {
                     size_t received;
                     if(con.client.recv(buffer, BUFFER_SIZE, received)){
-                        con.receiving.insert(con.receiving.begin(), buffer,buffer+received);
+                        con.receiving.insert(con.receiving.end(), buffer,buffer+received);
                         size_t index = 0;
                         while(con.receiving.size() > 4+index){
                             BinaryData bd;
@@ -135,19 +136,12 @@ void Server::update(){
     }
 
 
-    // TMP:
     for (size_t i = 0; i < players.size();i++) {
         auto& player = players[i];
         if(auto _bd = player.con->toServer.recv(); _bd.has_value()){
             auto bd = _bd.value();
             procotolList.receive(*player.con, bd, false);
         }
-    }
-    time_t t;
-    time(&t);
-    if(t>lastTime && players.size()){
-        procotolList.debugPrint.send(players[0].con->toClient, std::to_string(t));
-        lastTime = t;
     }
     
 }
@@ -160,5 +154,6 @@ void Server::addPlayer(std::shared_ptr<Connection> con){
     
 
     procotolList.debugPrint.send(con->toClient, "Welcome!");
+    procotolList.chunk.send(con->toClient, *App::app->chunk);
 }    
 

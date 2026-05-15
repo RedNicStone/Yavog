@@ -25,7 +25,7 @@ public:
     RenderSync render;
 
     GameFolder gf;
-    World world;
+    World2 world;
     
     
     std::filesystem::path projectBaseDir;

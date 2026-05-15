@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-class World{
+class World2{
 public:
     void create(std::filesystem::path path){
         if(!std::filesystem::exists(path)){

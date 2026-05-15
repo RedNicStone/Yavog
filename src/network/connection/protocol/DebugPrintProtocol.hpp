@@ -3,12 +3,12 @@
 #include <string>
 
 struct DebugPrintProtocol:public ProtocolInterface{
-    virtual void clientReceive(Channel4TwoThread& con,BinaryData& input){
+    virtual void clientReceive(Channel4TwoThread& con,BinaryData& input)override{
         std::u8string str;
         input.readString(str);
         std::cout << "[Server]"<< str <<std::endl;
     }
-    virtual void serverReceive(Channel4TwoThread& con,BinaryData& input){
+    virtual void serverReceive(Channel4TwoThread& con,BinaryData& input)override{
         std::u8string str;
         input.readString(str);
         std::cout << "[Client]"<< str <<std::endl;

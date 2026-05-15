@@ -72,7 +72,7 @@ bool ClientNetworkConnection::update(){
         if(poll.isReadable(socket)){
             size_t received;
             if(socket.recv(buffer, BUFFER_SIZE, received)){
-                receiving.insert(receiving.begin(), buffer,buffer+received);
+                receiving.insert(receiving.end(), buffer,buffer+received);
                 size_t index = 0;
                 while(receiving.size() > 4+index){
                     BinaryData bd;

@@ -1,15 +1,39 @@
 #include <cassert>
+#include <cstdlib>
 #include <filesystem>
 #include <iostream>
 #include <memory>
 #include "App.hpp"
+#include "FastNoiseLite.h"
 #include "GLFW/glfw3.h"
+#include "world/Chunk.hpp"
 
 App* App::app = nullptr;
 
 App::App(std::filesystem::path projectDir):projectDir(projectDir){
     assert(!app);
     app = this;
+
+
+    time_t t;
+    time(&t);
+    FastNoiseLite noise;
+    noise.SetSeed(t);
+    noise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
+    noise.SetFractalType(FastNoiseLite::FractalType_FBm);
+    noise.SetFrequency(0.005);
+    //noise.SetFractalGain(0.75);
+    noise.SetFractalOctaves(5);
+    //noise.SetFractalLacunarity(2);    
+
+    chunk = std::make_shared<Chunk>();
+    for (int x = 0; x < Chunk::chunkSize; x++) {
+        for (int y = 0; y < Chunk::chunkSize; y++) {
+            for (int z = 0; z < Chunk::chunkSize; z++) {
+                chunk->chunkData[x][y][z].type = noise.GetNoise((float)x, (float)y, (float)z)>0;
+            }
+        }
+    }
 }
 App::~App(){
     assert(app);
@@ -22,7 +46,10 @@ bool App::run(){
     
     guiSystem->create(projectDir);
     vulkan.window.inputHandler = guiSystem;
+
+    world.init(vulkan, projectDir);
     
+
     while (vulkan.window.update()) {
         
         ImageIndex imageIndex;
@@ -49,8 +76,19 @@ bool App::run(){
 
         fpsCounter.update();
         guiSystem->draw(CB);
+
         client.update();
         server.update();
+        
+        //TODO: TMP
+        {
+            world.draw(vulkan,CB, imageIndex);
+            if(chunk)
+                chunk->draw(CB);
+            //camera 
+            if(vulkan.window.isMouseGrabbed())
+                world.camera.update(vulkan.window,fpsCounter.delta);  
+        }
 
         vulkan.swapchain.endRendering(CB, imageIndex);
         CB.end();

@@ -8,6 +8,7 @@
 #include "network/connection/Client.hpp"
 #include "network/connection/Server.hpp"
 #include "vulkan/Vulkan.hpp"
+#include "world/World.hpp"
 
 class App{
     std::filesystem::path projectDir;
@@ -26,6 +27,9 @@ public:
     Server server;
     Client client;
 
+    //TODO: tmp
+    World world;
+    std::shared_ptr<class Chunk> chunk;
 
     static App* app;
 };
