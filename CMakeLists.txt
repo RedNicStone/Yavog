@@ -60,39 +60,34 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glfw glm stb fastnoiselite freetype)
 
 #vulkan
-if(WIN32)
-  message(${CMAKE_RC_COMPILER})
-  FetchContent_Declare(
-    vulkan_headers
-    GIT_REPOSITORY https://github.com/KhronosGroup/Vulkan-Headers.git
-    GIT_TAG vulkan-sdk-1.3.280.0
-  )
-  FetchContent_MakeAvailable(vulkan_headers)
-  FetchContent_Declare(
-    vulkan_loader
-    GIT_REPOSITORY https://github.com/KhronosGroup/Vulkan-Loader.git
-    GIT_TAG vulkan-sdk-1.3.280.0
-  )
-  FetchContent_MakeAvailable(vulkan_loader)
-  message("${vulkan_headers_SOURCE_DIR}/include")
+FetchContent_Declare(
+  vulkan_headers
+  GIT_REPOSITORY https://github.com/KhronosGroup/Vulkan-Headers.git
+  GIT_TAG vulkan-sdk-1.3.280.0
+)
+FetchContent_MakeAvailable(vulkan_headers)
+FetchContent_Declare(
+  vulkan_loader
+  GIT_REPOSITORY https://github.com/KhronosGroup/Vulkan-Loader.git
+  GIT_TAG vulkan-sdk-1.3.280.0
+)
+FetchContent_MakeAvailable(vulkan_loader)
+message("xxx${vulkan_headers_SOURCE_DIR}/include")
 
+
+
+if(WIN32)
   FetchContent_Declare(
     slang
     URL https://github.com/shader-slang/slang/releases/download/v2026.7/slang-2026.7-windows-x86_64.zip
   )
   FetchContent_MakeAvailable(slang)
-  
 else()
-  FetchContent_Declare(
-    vulkan
-    URL https://sdk.lunarg.com/sdk/download/1.4.341.1/linux/vulkansdk-linux-x86_64-1.4.341.1.tar.xz
+    FetchContent_Declare(
+    slang
+    URL https://github.com/shader-slang/slang/releases/download/v2026.7/slang-2026.7-linux-x86_64.tar.gz
   )
-  FetchContent_MakeAvailable(vulkan)
-  add_library(vulkan SHARED IMPORTED)
-  set_target_properties(vulkan PROPERTIES
-      IMPORTED_LOCATION "${vulkan_SOURCE_DIR}/x86_64/lib/libvulkan.so"
-      INTERFACE_INCLUDE_DIRECTORIES "${vulkan_SOURCE_DIR}/x86_64/include"
-  )
+  FetchContent_MakeAvailable(slang)
 endif(WIN32)
 
 
@@ -106,6 +101,7 @@ target_link_libraries(YAVOG glfw)
 target_link_libraries(YAVOG vulkan)
 target_link_libraries(YAVOG glm)
 target_link_libraries(YAVOG freetype)
+target_include_directories(YAVOG PRIVATE ${vulkan_headers_SOURCE_DIR}/include)
 
 if(MSVC)
   target_compile_options(YAVOG PRIVATE /wd2397 /wd4838)
@@ -121,7 +117,6 @@ if(WIN32)
   add_compile_definitions(_WIN32_WINNT=0x0600)
   target_link_libraries(YAVOG ws2_32)
   target_link_libraries(YAVOG wsock32)
-  target_include_directories(YAVOG PRIVATE ${vulkan_headers_SOURCE_DIR}/include)
 endif()
 
 if(MINGW)
@@ -161,7 +156,7 @@ file(GLOB_RECURSE SHADER_SLANG_SOURCES_TEXT CONFIGURE_DEPENDS
 if(WIN32)
   set(SLANGC_EXECUTABLE "${slang_SOURCE_DIR}/bin/slangc.exe")
 else()
-  set(SLANGC_EXECUTABLE "${vulkan_SOURCE_DIR}/x86_64/bin/slangc")
+  set(SLANGC_EXECUTABLE "${slang_SOURCE_DIR}/bin/slangc")
 endif(WIN32)
 
 add_slang_shader_target( shaders SOURCES ${SHADER_SLANG_SOURCES} OUT slang)

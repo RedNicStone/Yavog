@@ -1,7 +1,6 @@
 #include "Window.hpp"
 #include "GLFW/glfw3.h"
 #include "Event.hpp"
-#include <harfbuzz/hb.h>
 #include <variant>
 
 int64_t glfwCount = 0;

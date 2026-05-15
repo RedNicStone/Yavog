@@ -107,11 +107,11 @@ Font::Glyph Font::getGlyph(RenderSync* render,CommandPool& pool,uint32_t c){
                 image->getCurrent()->image, 
                 vk::ImageLayout::eShaderReadOnlyOptimal, 
                 vk::ImageLayout::eTransferSrcOptimal, 
-                vk::AccessFlags2::BitsType::eShaderRead, 
-                vk::AccessFlags2::BitsType::eTransferRead,
-                vk::PipelineStageFlags2::BitsType::eFragmentShader, 
-                vk::PipelineStageFlags2::BitsType::eTransfer, 
-                vk::ImageAspectFlags::BitsType::eColor
+                vk::AccessFlagBits2::eShaderRead, 
+                vk::AccessFlagBits2::eTransferRead,
+                vk::PipelineStageFlagBits2::eFragmentShader, 
+                vk::PipelineStageFlagBits2::eTransfer, 
+                vk::ImageAspectFlagBits::eColor
             );
             cb.commandBuffer.copyImage(
                 image->getCurrent()->image, 
@@ -130,11 +130,11 @@ Font::Glyph Font::getGlyph(RenderSync* render,CommandPool& pool,uint32_t c){
                 image->getCurrent()->image, 
                 vk::ImageLayout::eTransferSrcOptimal, 
                 vk::ImageLayout::eShaderReadOnlyOptimal, 
-                vk::AccessFlags2::BitsType::eTransferRead, 
-                vk::AccessFlags2::BitsType::eShaderRead,
-                vk::PipelineStageFlags2::BitsType::eTransfer, 
-                vk::PipelineStageFlags2::BitsType::eFragmentShader, 
-                vk::ImageAspectFlags::BitsType::eColor
+                vk::AccessFlagBits2::eTransferRead, 
+                vk::AccessFlagBits2::eShaderRead,
+                vk::PipelineStageFlagBits2::eTransfer, 
+                vk::PipelineStageFlagBits2::eFragmentShader, 
+                vk::ImageAspectFlagBits::eColor
             );
             cb.endSingleTimeCommands(pool);
         }
