@@ -4,10 +4,6 @@
 #include <memory>
 #include "App.hpp"
 #include "GLFW/glfw3.h"
-#include "glm/ext/vector_float2.hpp"
-#include "gui/GuiAsset.hpp"
-#include "gui/GuiScreen.hpp"
-#include "vulkan/window/DepthBuffer.hpp"
 
 App* App::app = nullptr;
 
