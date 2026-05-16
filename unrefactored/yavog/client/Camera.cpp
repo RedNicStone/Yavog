@@ -11,6 +11,10 @@ void Camera::update(Window& window, float delta){
         glfwSetCursorPos(window,xpos,ypos);
     }
     
+    phi   = glm::radians(-(float)xpos*sensitivity);
+    theta = glm::radians(-(float)ypos*sensitivity);
+    
+
     auto rotation = glm::mat4(1.f);
     rotation = glm::rotate(rotation, glm::radians(-(float)xpos*sensitivity) , glm::vec3(0.0f, 1.0f, 0.0f));
     rotation = glm::rotate(rotation, glm::radians(-(float)ypos*sensitivity) , glm::vec3(1.0f, 0.0f, 0.0f));

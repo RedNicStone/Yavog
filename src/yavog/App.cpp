@@ -7,8 +7,10 @@
 #include "yavog/App.hpp"
 #include "FastNoiseLite.h"
 #include <GLFW/glfw3.h>
+#include <numbers>
 #include <ratio>
 #include <thread>
+#include "glm/ext/matrix_transform.hpp"
 #include "glm/ext/vector_float3.hpp"
 #include "yavog/gui/screen/MainMenu.hpp"
 #include "yavog/vulkan/draw/PushContant.hpp"
@@ -131,7 +133,12 @@ bool App::run(){
             if(vulkan.window.isMouseGrabbed())
                 world.camera.update(vulkan.window,fpsCounter.delta);  
             {
-                model->pushConstant.use(CB, model->pipeline, World::WorldPushConstant{.position = position});
+                glm::mat4 matrix(1);
+                matrix = glm::translate(matrix, position);
+                matrix = glm::rotate(matrix, (float)(phi+std::numbers::pi) , glm::vec3(0.0f, 1.0f, 0.0f));
+                model->pushConstant.use(CB, model->pipeline, Model::ModelPushConstant{
+                    .matrix = matrix
+                });
                 model->draw(CB);
             }
             //if(!client.cnc.con->isClose)

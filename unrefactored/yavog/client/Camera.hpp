@@ -24,6 +24,9 @@ public:
     glm::vec3 forward = glm::vec3(0.0f, -1.0f, -1.0f);
     glm::vec3 right = glm::vec3(-1.0f, -1.0f, 0.0f);
     
+    float phi;
+    float theta;
+
     void update(Window& window, float delta);
     
     void updateUniformBuffer(uint32_t frameIndex, float aspectRatio, bool zoom,glm::vec3 cameraPos,glm::vec3 cameraForward) {

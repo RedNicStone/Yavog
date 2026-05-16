@@ -24,12 +24,17 @@ public:
     ///@return restart?
     bool run();
 
-    std::shared_ptr<class Model> model;
-    glm::vec3 position = glm::vec3(0);
-
     Server server;
     Client client;
 
+    //TMP
+    std::shared_ptr<class Model> model;
+    glm::vec3 position = glm::vec3(0);
+    float phi;
+    float theta;    
+
+
+    
     //TODO: tmp
     World world;
     std::shared_ptr<class Chunk> chunk;

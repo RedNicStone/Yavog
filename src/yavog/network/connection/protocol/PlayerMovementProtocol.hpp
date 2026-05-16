@@ -14,14 +14,19 @@ struct PlayerMovementProtocol:public ProtocolInterface{
         bd.writef32(camera.pos.x);
         bd.writef32(camera.pos.y);
         bd.writef32(camera.pos.z);
+        bd.writef32(camera.phi);
+        bd.writef32(camera.theta);
         con.send(bd);
     }
-    void send(Channel4TwoThread& con,glm::vec3 pos){
+    void send(Channel4TwoThread& con,glm::vec3 pos,float phi,float theta){
         BinaryData bd;
         bd.writeU16(protocolId);
         bd.writef32(pos.x);
         bd.writef32(pos.y);
         bd.writef32(pos.z);
+        bd.writef32(phi);
+        bd.writef32(theta);
+
         con.send(bd);
     }
 };

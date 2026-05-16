@@ -6,6 +6,7 @@
 #include <memory>
 #include <vector>
 #include "cgltf.h"
+#include "glm/ext/matrix_float4x4.hpp"
 #include "glm/ext/vector_float2.hpp"
 #include "yavog/App.hpp"
 #include "yavog/vulkan/draw/Buffer.hpp"
@@ -21,6 +22,7 @@ class Model{
     std::vector<uint16_t> indices;
 public:
     std::shared_ptr<Image> image = std::make_shared<Image>();
+
     void processNode(cgltf_node& node){
         std::cout << node.name << std::endl;   
         for (int i = 0; i < node.children_count; i++) {
@@ -102,7 +104,9 @@ public:
     DescriptorSet ds;
     Pipeline pipeline;
     PushConstant pushConstant;
-
+    struct ModelPushConstant{
+        glm::mat4 matrix;  
+    };
     Model(){
 
     }
@@ -147,7 +151,7 @@ public:
         ds.setResource(0, camera.ubo);
         ds.setResource(1, image);
 
-        pushConstant.create(vk::ShaderStageFlagBits::eVertex, 0, sizeof(World::WorldPushConstant));
+        pushConstant.create(vk::ShaderStageFlagBits::eVertex, 0, sizeof(ModelPushConstant));
 
         pipeline.create(&App::app->vulkan.render,App::app->vulkan.device,
             projectDir/"bin"/"shaders"/"model.spv",
