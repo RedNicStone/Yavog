@@ -47,7 +47,9 @@ bool ClientNetworkConnection::update(){
         poll.addWrite(socket);
     }
     
-    if(poll.wait(0)){
+    bool repeat = true;
+    while(poll.wait(0) && repeat){
+        repeat = false;
         //send
         if(poll.isWriteable(socket)){
             if(!sending.size()){
@@ -67,6 +69,8 @@ bool ClientNetworkConnection::update(){
             }
             if(!sending.size())
                 poll.removeWrite(socket);
+            else
+                repeat = true;
         }
         //recv
         if(poll.isReadable(socket)){
@@ -88,6 +92,7 @@ bool ClientNetworkConnection::update(){
                     }else break;
                 }
                 receiving.erase(receiving.begin(), receiving.begin()+index);
+                repeat = true;
             }
         }
     }

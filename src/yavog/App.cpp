@@ -1,4 +1,5 @@
 #include <cassert>
+#include <chrono>
 #include <cstdlib>
 #include <filesystem>
 #include <iostream>
@@ -6,15 +7,16 @@
 #include "yavog/App.hpp"
 #include "FastNoiseLite.h"
 #include <GLFW/glfw3.h>
+#include <ratio>
+#include <thread>
+#include "yavog/gui/screen/MainMenu.hpp"
 #include "yavog/world/Chunk.hpp"
 
 App* App::app = nullptr;
 
 void generateChunk(Chunk& chunk){
-    time_t t;
-    time(&t);
     FastNoiseLite noise;
-    noise.SetSeed(t);
+    noise.SetSeed(rand());
     noise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
     noise.SetFractalType(FastNoiseLite::FractalType_FBm);
     noise.SetFrequency(0.005);
@@ -94,7 +96,10 @@ bool App::run(){
         fpsCounter.update();
         guiSystem->draw(CB);
 
-        client.update();
+        if( !client.update() && !guiSystem->screen ){
+            guiSystem->setScreen(std::make_shared<MainMenu>(*guiSystem));
+            chunk.reset();
+        }
         server.update();
         
         if(glfwGetKey(vulkan.window, GLFW_KEY_P) == GLFW_PRESS)
@@ -109,6 +114,7 @@ bool App::run(){
             world.draw(vulkan,CB, imageIndex);
             if(chunk)
                 chunk->draw(CB);
+
             //camera 
             if(vulkan.window.isMouseGrabbed())
                 world.camera.update(vulkan.window,fpsCounter.delta);  
