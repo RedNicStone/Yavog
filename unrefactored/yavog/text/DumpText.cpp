@@ -163,13 +163,13 @@ Font::Glyph Font::getGlyph(RenderSync* render,CommandPool& pool,uint32_t c){
         image->current->transitionImageLayout(pool, vk::ImageLayout::eUndefined, vk::ImageLayout::eTransferDstOptimal);
         CommandBuffer commandBuffer(pool);
         commandBuffer.beginSingleTimeCommands();
-        vk::BufferImageCopy region{ 
+        vk::BufferImageCopy region{
             .bufferOffset = 0,
             .bufferRowLength = 0,
             .bufferImageHeight = 0,
-            .imageSubresource = { vk::ImageAspectFlagBits::eColor, 0, 0, 1 }, 
-            .imageOffset = {resp.position.x, resp.position.y, 0}, 
-            .imageExtent = {(uint32_t)texWidth, (uint32_t)texHeight, 1} 
+            .imageSubresource = { vk::ImageAspectFlagBits::eColor, 0, 0, 1 },
+            .imageOffset = {resp.position.x, resp.position.y, 0},
+            .imageExtent = {(uint32_t)texWidth, (uint32_t)texHeight, 1}
         };
         commandBuffer.commandBuffer.copyBufferToImage(stagingBuffer.buffer,image->current->image,vk::ImageLayout::eTransferDstOptimal,{region});
         commandBuffer.endSingleTimeCommands(pool);
@@ -223,8 +223,8 @@ void Text::setString(Font& font,CommandPool& pool,RenderSync* render ,std::u32st
     float advance = 0;
     width = 0;
     for(auto& glyph:glyphs){   
-        glm::vec2 texPos  = glm::vec2(glyph.texPos);
-        glm::vec2 texEnd = glm::vec2(glyph.texSize+glyph.texPos);
+        glm::vec2 texPos  = glm::vec2(glyph.texPos) + 0.5f;
+        glm::vec2 texEnd  = glm::vec2(glyph.texSize + glyph.texPos) - 0.5f;
         
         glm::vec2 pos = glm::vec2(glyph.bearing.x,48-glyph.bearing.y)/48.f;
         glm::vec2 size = glm::vec2(glyph.size)/48.f;
