@@ -1,4 +1,6 @@
 #include "Client.hpp"
+#include "yavog/network/connection/Connection.hpp"
+#include <memory>
 
 std::u8string ClientNetworkConnection::toUTF8(std::u32string u32address)
 {
@@ -21,6 +23,9 @@ std::u8string ClientNetworkConnection::toUTF8(std::u32string u32address)
     return u8address;
 }
 bool ClientNetworkConnection::join(std::u32string u32address){
+    con = std::make_shared<Connection>();
+    receiving.clear();
+    sending.clear();
     //convert u32 to u8string:
     std::u8string u8address = toUTF8(u32address);
     
@@ -34,6 +39,7 @@ bool ClientNetworkConnection::join(std::u32string u32address){
         std::cout << "failed to connect to "<<(char*)ip.c_str()<<" "<<(char*)port.c_str() << std::endl;
         return false;
     }
+    poll.wait();
     poll.add(socket,false,true);
     return true;
 }
