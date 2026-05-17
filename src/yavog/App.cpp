@@ -134,7 +134,7 @@ bool App::run(){
                 world.camera.update(vulkan.window,fpsCounter.delta);  
             {
                 glm::mat4 matrix(1);
-                matrix = glm::translate(matrix, position);
+                matrix = glm::translate(matrix, position-glm::vec3(0,2,0));
                 matrix = glm::rotate(matrix, (float)(phi+std::numbers::pi) , glm::vec3(0.0f, 1.0f, 0.0f));
                 model->pushConstant.use(CB, model->pipeline, Model::ModelPushConstant{
                     .matrix = matrix

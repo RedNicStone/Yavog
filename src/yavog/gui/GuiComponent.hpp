@@ -1,5 +1,6 @@
 #pragma once
 #include <GLFW/glfw3.h>
+#include "yavog/network/connection/Client.hpp"
 #include "yavog/text/DumpText.hpp"
 #include <glm/ext/vector_float2.hpp>
 #include <glm/ext/vector_float4.hpp>
@@ -104,6 +105,16 @@ public:
                 if(ev.key == GLFW_KEY_BACKSPACE){
                     if(text.string.size()){
                         setString(text.string.substr(0,text.string.size()-1));
+                    }
+                }
+                if(ev.key == GLFW_KEY_V && ev.mods & GLFW_MOD_CONTROL){
+                    const char * clipBoard = glfwGetClipboardString(event.window);
+                    if(clipBoard){
+                        std::string clip(clipBoard);
+                        auto str = ClientNetworkConnection::toUTF8(text.string)+std::u8string(clip.begin(),clip.end());
+                        text.setString(assets.font, vulkan.commandPool, &vulkan.render, 
+                            str
+                        );
                     }
                 }
             }
