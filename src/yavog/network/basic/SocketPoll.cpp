@@ -36,11 +36,13 @@ void SocketPoll::remove(int handle){
         return;
     // swap remove
     int index = handle2Index[handle];
+    handle2Index.erase(handle);
     std::swap(connections[index],connections[connections.size()-1]);
     connections.pop_back();
-    int otherHandle = connections[index].fd;
-    handle2Index[otherHandle] = index;
-    handle2Index.erase(handle);
+    if(connections.size() > index){
+        int otherHandle = connections[index].fd;
+        handle2Index[otherHandle] = index;
+    }
 }
 
 void SocketPoll::addWrite   (SocketBase& socket){
